@@ -704,6 +704,10 @@
 <td>查找快捷功能</td>
 <td>Ctrl + Shift + A</td>
 </tr>
+<tr>
+<td>插入预设的模版</td>
+<td>Ctrl + J</td>
+</tr>
 </tbody>
 </table>
 <h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><table>
@@ -818,9 +822,406 @@
 </tr>
 </tbody>
 </table>
-<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><p>代码补全（注意快捷键被输入法覆盖） Ctrl + Space<br>根据类型补全 |  Ctrl + Shift + Space<br>Complete statement Ctrl + Shift + Enter<br>Parameter info (within method call arguments) Ctrl + P<br>Quick documentation lookup Ctrl + Q<br>External Doc Shift + F1<br>Brief Info Ctrl + mouse<br>Show descriptions of error at caret Ctrl + F1<br>Generate code… Alt + Insert<br>Override methods Ctrl + O<br>Implement methods Ctrl + I<br>Surround with…  Ctrl + Alt + T<br>Comment /uncomment with line comment Ctrl + /<br>Comment /uncomment with block comment Ctrl + Shift + /<br>Extend selection Ctrl + W<br>Shrink selection Ctrl + Shift + W<br>Context info Alt + Q<br>Show intention actions and quick-fixes Alt + Enter<br>Reformat code Ctrl + Alt + L<br>Optimize imports Ctrl + Alt + O<br>Auto-indent line(s) Ctrl + Alt + I<br>Indent /unindent selected lines Tab / Shift + Tab<br>Cut current line to clipboard Ctrl + X , Shift + Delete<br>Copy current line to clipboard Ctrl + C , Ctrl + Insert<br>Paste from clipboard Ctrl + V , Shift + Insert<br>Paste from recent buffers… Ctrl + Shift + V<br>Duplicate current line Ctrl + D<br>Delete line at caret Ctrl + Y<br>Smart line join Ctrl + Shift + J<br>Smart line split Ctrl + Enter<br>Start new line Shift + Enter<br>Toggle case for word at caret or selected block Ctrl + Shift + U<br>Select till code block end / start Ctrl + Shift + ] / [<br>Delete to word end Ctrl + Delete<br>Delete to word start Ctrl + Backspace<br>Expand/collapse code block Ctrl + NumPad+ / -<br>Expand all Ctrl + Shift + NumPad+<br>Collapse all Ctrl + Shift + NumPadClose<br>active editor tab Ctrl + F4<br>Refactoring<br>Copy F5<br>Move F6<br>Safe Delete Alt + Delete<br>Rename Shift + F6<br>Refactor this Ctrl + Alt + Shift + T<br>Change Signature Ctrl + F6<br>Inline Ctrl + Alt + N<br>Extract Method Ctrl + Alt + M<br>Extract Variable Ctrl + Alt + V<br>Extract Field Ctrl + Alt + F<br>Extract Constant Ctrl + Alt + C<br>Extract Parameter Ctrl + Alt + P<br>Navigation<br>Go to class Ctrl + N<br>Go to file Ctrl + Shift + N<br>Go to symbol Ctrl + Alt + Shift + N<br>Go to next /previous editor tab Alt + Right/Left<br>Go back to previous tool window F12<br>Go to editor (from tool window) Esc<br>Hide active or last active window Shift + Esc<br>Go to line Ctrl + G<br>Recent files popup Ctrl + E<br>Navigate back/ forward Ctrl + Alt + Left/Right<br>Navigate to last edit location Ctrl + Shift + Backspace<br>Select current file or symbol in any view Alt + F1<br>Go to declaration Ctrl + B , Ctrl + Click<br>Go to implementation(s) Ctrl + Alt + B<br>Open quick definition lookup Ctrl + Shift + I<br>Go to type declaration Ctrl + Shift + B<br>Go to super-method/ super-class Ctrl + U<br>Go to previous /next method Alt + Up/Down<br>Move to code block end/ start Ctrl + ]/[<br>File structure popup Ctrl + F12<br>Type hierarchy Ctrl + H<br>Method hierarchy Ctrl + Shift + H<br>Call hierarchy Ctrl + Alt + H<br>Next /previous highlighted error F2 / Shift + F2<br>Edit source/View source F4 / Ctrl + Enter<br>Show navigation bar Alt + Home<br>Toggle bookmark F11<br>Toggle bookmark with mnemonic Ctrl + F11<br>Go to numbered bookmark Ctrl + #[0-9]<br>Show bookmarks Shift + F11</p>
-<h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><p>Make project Ctrl + F9<br>Compile selected file, package or module Ctrl + Shift + F9<br>Select configuration and run/debug Alt + Shift + F10/F9<br>Run/Debug Shift + F10 / F9<br>Run context configuration from editor Ctrl + Shift + F10<br>Usage Search</p>
-<p>VCS / Local History<br>Commit project to VCS Ctrl + K<br>Update project from VCS Ctrl + T<br>Push commits Ctrl + Shift + K<br>‘VCS’ quick popup Alt + BackQuote (`)<br>Live Templates<br>Surround with Live Template Ctrl + Alt + J<br>Insert Live Template Ctrl + J</p>
+<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><table>
+<thead>
+<tr>
+<th>功能描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码补全（注意快捷键被输入法覆盖）</td>
+<td>Ctrl + Space</td>
+</tr>
+<tr>
+<td>根据类型补全</td>
+<td>Ctrl + Shift + Space</td>
+</tr>
+<tr>
+<td>选中正在查看的条目和相关声明</td>
+<td>Ctrl + Shift + Enter</td>
+</tr>
+<tr>
+<td>参数信息</td>
+<td>Ctrl + P</td>
+</tr>
+<tr>
+<td>查看详情</td>
+<td>Ctrl + Q</td>
+</tr>
+<tr>
+<td>查看外部文档</td>
+<td>Shift + F1</td>
+</tr>
+<tr>
+<td>查看概要信息</td>
+<td>Ctrl + mouse</td>
+</tr>
+<tr>
+<td>显示错误描述</td>
+<td>Ctrl + F1</td>
+</tr>
+<tr>
+<td>生成代码（构造函数，setter，getter等）</td>
+<td>Alt + Insert</td>
+</tr>
+<tr>
+<td>重写函数</td>
+<td>Ctrl + O</td>
+</tr>
+<tr>
+<td>实现函数</td>
+<td>Ctrl + I</td>
+</tr>
+<tr>
+<td>快捷插入try/catch,if,while等完整语句</td>
+<td>  Ctrl + Alt + T</td>
+</tr>
+<tr>
+<td>注释单行</td>
+<td>Ctrl + /</td>
+</tr>
+<tr>
+<td>注释多行</td>
+<td>Ctrl + Shift + /</td>
+</tr>
+<tr>
+<td>选择当前光标对应完整的命名，多次按此组合会依次扩大选中区域</td>
+<td>Ctrl + W</td>
+</tr>
+<tr>
+<td>缩小选中范围</td>
+<td>Ctrl + Shift + W</td>
+</tr>
+<tr>
+<td>上下文信息</td>
+<td>Alt + Q</td>
+</tr>
+<tr>
+<td>显示快捷动作列表</td>
+<td>Alt + Enter</td>
+</tr>
+<tr>
+<td>格式化代码</td>
+<td>Ctrl + Alt + L</td>
+</tr>
+<tr>
+<td>移出没用的imports并重新排序</td>
+<td>Ctrl + Alt + O</td>
+</tr>
+<tr>
+<td>自动缩进选中的代码</td>
+<td>Ctrl + Alt + I</td>
+</tr>
+<tr>
+<td>自动缩进选中的行（每次一个制表符）</td>
+<td>Tab </td>
+</tr>
+<tr>
+<td>自动反缩进选中的行（每次一个制表符）</td>
+<td>Shift + Tab</td>
+</tr>
+<tr>
+<td>剪切</td>
+<td>Ctrl + X , Shift + Delete</td>
+</tr>
+<tr>
+<td>复制</td>
+<td>Ctrl + C , Ctrl + Insert</td>
+</tr>
+<tr>
+<td>粘贴</td>
+<td>Ctrl + V , Shift + Insert</td>
+</tr>
+<tr>
+<td>从剪切板列表中选择粘贴</td>
+<td>Ctrl + Shift + V</td>
+</tr>
+<tr>
+<td>复制当前行</td>
+<td>Ctrl + D</td>
+</tr>
+<tr>
+<td>删除选中的行</td>
+<td>Ctrl + Y</td>
+</tr>
+<tr>
+<td>合并行</td>
+<td>Ctrl + Shift + J</td>
+</tr>
+<tr>
+<td>拆分行</td>
+<td>Ctrl + Enter</td>
+</tr>
+<tr>
+<td>开始新的一行</td>
+<td>Shift + Enter</td>
+</tr>
+<tr>
+<td>转换大小写</td>
+<td>Ctrl + Shift + U</td>
+</tr>
+<tr>
+<td>选中从当前位置到代码块结束(开始)的位置</td>
+<td>Ctrl + Shift + ] / [</td>
+</tr>
+<tr>
+<td>删除从当前位置到单词结束</td>
+<td>Ctrl + Delete</td>
+</tr>
+<tr>
+<td>删除从当前位置到单词开始</td>
+<td>Ctrl + Backspace</td>
+</tr>
+</tbody>
+</table>
+<p>展开（收起）代码块 Ctrl + NumPad+ / -<br>展开所有 | Ctrl + Shift + NumPad+<br>收起所有 | Ctrl + Shift + NumPad-<br>关闭当前编辑页 | Ctrl + F4</p>
+<h2 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h2><table>
+<thead>
+<tr>
+<th>功能描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>复制当前类、文件、文件夹</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>移动当前类、文件、文件夹</td>
+<td>F6</td>
+</tr>
+<tr>
+<td>删除函数、类，并检查所有引用</td>
+<td>Alt + Delete</td>
+</tr>
+<tr>
+<td>重命名</td>
+<td>Shift + F6</td>
+</tr>
+<tr>
+<td>重构功能列表</td>
+<td>Ctrl + Alt + Shift + T</td>
+</tr>
+<tr>
+<td>修改类或者函数，并自动校正引用</td>
+<td>Ctrl + F6</td>
+</tr>
+<tr>
+<td>内置选中的变量或者函数</td>
+<td>Ctrl + Alt + N</td>
+</tr>
+<tr>
+<td>把选中的代码段构造成函数</td>
+<td>Ctrl + Alt + M</td>
+</tr>
+<tr>
+<td>把选中的表达式的结果构造成变量</td>
+<td>Ctrl + Alt + V</td>
+</tr>
+<tr>
+<td>把选中的表达式的结果构造成成员变了</td>
+<td>Ctrl + Alt + F</td>
+</tr>
+<tr>
+<td>把选中的表达式的结果构造成常量</td>
+<td>Ctrl + Alt + C</td>
+</tr>
+<tr>
+<td>把选中的表达式提取出函数的一个参数</td>
+<td>Ctrl + Alt + P</td>
+</tr>
+</tbody>
+</table>
+<h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><table>
+<thead>
+<tr>
+<th>功能描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>按类索引</td>
+<td>Ctrl + N</td>
+</tr>
+<tr>
+<td>按文件索引</td>
+<td>Ctrl + Shift + N</td>
+</tr>
+<tr>
+<td>按符号索引</td>
+<td>Ctrl + Alt + Shift + N</td>
+</tr>
+<tr>
+<td>跳转到下(上)一个编辑的位置</td>
+<td>Alt + Right/Left</td>
+</tr>
+<tr>
+<td>返回到上一个工具窗口</td>
+<td>window F12</td>
+</tr>
+<tr>
+<td>回到编辑窗口</td>
+<td>Esc</td>
+</tr>
+<tr>
+<td>隐藏上一个活跃的工具窗口</td>
+<td>window Shift + Esc</td>
+</tr>
+<tr>
+<td>跳转到行</td>
+<td>Ctrl + G</td>
+</tr>
+<tr>
+<td>显示最近文件列表</td>
+<td>Ctrl + E</td>
+</tr>
+<tr>
+<td>往后(往前)一步</td>
+<td>Ctrl + Alt + Left/Right</td>
+</tr>
+<tr>
+<td>跳转到上一个编辑的位置</td>
+<td>Ctrl + Shift + Backspace</td>
+</tr>
+<tr>
+<td>选择文件或者符号的视窗</td>
+<td>Alt + F1</td>
+</tr>
+<tr>
+<td>转到定义</td>
+<td>Ctrl + B , Ctrl + Click</td>
+</tr>
+<tr>
+<td>转到实现</td>
+<td>Ctrl + Alt + B</td>
+</tr>
+<tr>
+<td>快速查看定义</td>
+<td>Ctrl + Shift + I</td>
+</tr>
+<tr>
+<td>跳转到类型的定义</td>
+<td>Ctrl + Shift + B</td>
+</tr>
+<tr>
+<td>跳转到父类</td>
+<td>Ctrl + U</td>
+</tr>
+<tr>
+<td>跳转下一个（上一个）函数</td>
+<td>Alt + Up/Down</td>
+</tr>
+<tr>
+<td>移动到代码块的结束(开始)位置</td>
+<td>Ctrl + ]/[</td>
+</tr>
+<tr>
+<td>显示文件结构列表</td>
+<td>Ctrl + F12</td>
+</tr>
+<tr>
+<td>显示当前类的继承关系</td>
+<td>Ctrl + H</td>
+</tr>
+<tr>
+<td>显示当前方法的继承关系</td>
+<td>Ctrl + Shift + H</td>
+</tr>
+<tr>
+<td>显示当前函数的调用关系</td>
+<td>Ctrl + Alt + H</td>
+</tr>
+<tr>
+<td>下一个(上一个)高亮的错误</td>
+<td>F2 / Shift + F2</td>
+</tr>
+<tr>
+<td>跳转到源码</td>
+<td>F4</td>
+</tr>
+<tr>
+<td>显示导航栏</td>
+<td>Alt + Home</td>
+</tr>
+<tr>
+<td>在当前行插入标签</td>
+<td>F11</td>
+</tr>
+<tr>
+<td>插入可记忆的标签</td>
+<td>Ctrl + F11</td>
+</tr>
+<tr>
+<td>跳转到对于序号的标签</td>
+<td>Ctrl + #[0-9]</td>
+</tr>
+<tr>
+<td>显示标签</td>
+<td>Shift + F11</td>
+</tr>
+</tbody>
+</table>
+<h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><table>
+<thead>
+<tr>
+<th>功能描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编译工程</td>
+<td>Ctrl + F9</td>
+</tr>
+<tr>
+<td>编译选中的文件、包、模块</td>
+<td>Ctrl + Shift + F9</td>
+</tr>
+<tr>
+<td>选择配置运行</td>
+<td>Alt + Shift + F10</td>
+</tr>
+<tr>
+<td>选择配置调试</td>
+<td>Alt + Shift + F9</td>
+</tr>
+<tr>
+<td>运行</td>
+<td>F10</td>
+</tr>
+<tr>
+<td>调试</td>
+<td>F9</td>
+</tr>
+</tbody>
+</table>
+<p>##引用<br>功能描述 | 快捷键<br>—|—<br>查找引用  | Alt + F7<br>在当前文件中查找引用 | Ctrl + F7<br>在当前文件中高亮显示引用 | Ctrl + Shift + F7<br>显示引用 | Ctrl + Alt + F7</p>
+<h2 id="VCS"><a href="#VCS" class="headerlink" title="VCS"></a>VCS</h2><table>
+<thead>
+<tr>
+<th>功能描述</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提交到VCS</td>
+<td>Ctrl + K</td>
+</tr>
+<tr>
+<td>从VCS更新</td>
+<td>Ctrl + T</td>
+</tr>
+<tr>
+<td>推送提交</td>
+<td>Ctrl + Shift + K</td>
+</tr>
+</tbody>
+</table>
 
           
         
